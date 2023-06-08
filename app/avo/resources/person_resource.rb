@@ -10,4 +10,5 @@ class PersonResource < Avo::BaseResource
   field :name, as: :text
   field :age, as: :number
   # add fields here
+  field :biography, as: :trix
 end
