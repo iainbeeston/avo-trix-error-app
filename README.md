@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sample rails app to reproduce a bug in avo 2.34.1.
 
-Things you may want to cover:
+To reproduce the issue:
 
-* Ruby version
+1. start the app using `bin/rails s`
+2. go to http://localhost:3000/avo
 
-* System dependencies
+In avo, if you try to create a new person you should see this error:
 
-* Configuration
+    undefined method `html_safe' for #<ActionText::RichText id: nil, name: "biography", body: nil, record_type: "Person", record_id: nil, created_at: nil, updated_at: nil>
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+If you try to edit a person (you might have to create them via the rails console first) you should see the same error.
